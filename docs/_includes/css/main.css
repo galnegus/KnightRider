@@ -24,16 +24,17 @@ body {
 }
 
 h4 {
-  font-size: 18px;
+  font-size: 16px;
   text-transform: uppercase;
   font-weight: 300;
   color: #eee8f3;
+  text-shadow: 1px 1px 3px rgba(255, 0, 0, 1);
 
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
 }
 
 p {
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
 }
 
 header {
