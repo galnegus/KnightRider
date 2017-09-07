@@ -1,3 +1,7 @@
+html {
+  box-sizing: border-box;
+}
+
 body {
   background: #16111b;
   background: -moz-linear-gradient(left, #16111b 0%, #15101a 100%);
@@ -9,6 +13,14 @@ body {
   font-size: 14px;
   color: #8e8694;
   line-height: 1.7;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 h4 {
@@ -29,23 +41,27 @@ header {
 }
 
 main {
-  margin-top: 192px;
+  margin-top: 128px;
+  -webkit-box-flex: 1; 
+  -ms-flex-positive: 1; 
+  flex-grow: 1;
 }
 
 .logo {
-  transform: translateX(-60px);
-  margin-bottom: 48px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 92px;
+  display: block;
 }
 
 section {
   display: inline-block;
   vertical-align: top;
   width: 100%;
-  margin-bottom: 2em;
+  margin-bottom: 4em;
 }
 
 .col2 {
-  margin-top: -60px;
 }
 
 footer {
@@ -58,15 +74,25 @@ footer {
 }
 
 .gallery {
-
-}
-
-.gallery__row {
+  margin: 2em auto;
+  max-width: 1024px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: -5px;
 }
 
 .gallery a {
+  max-width: 50%;
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .gallery img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
