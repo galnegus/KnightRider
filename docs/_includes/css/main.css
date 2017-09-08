@@ -53,13 +53,15 @@ main {
   margin-right: auto;
   margin-bottom: 92px;
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 section {
   display: inline-block;
   vertical-align: top;
   width: 100%;
-  margin-bottom: 4em;
+  margin-bottom: 2em;
 }
 
 .col2 {
@@ -67,6 +69,7 @@ section {
 
 footer {
   background: #1f1925;
+  margin-top: 2em;
 }
 
 .plyr button {
@@ -90,6 +93,8 @@ footer {
   padding: 5px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
 }
 
 .gallery img {
