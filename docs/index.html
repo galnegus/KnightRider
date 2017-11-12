@@ -9,6 +9,7 @@
   <meta name="keywords" content="{{ site.keywords }}">
   <meta name="description" content="{{ site.description }}">
   <link rel="stylesheet" href="combo.css">
+   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.plyr.io/2.0.13/plyr.css">
   {% if site.favicon %}<link rel="shortcut icon" href="{{ site.favicon }}" type="image/x-icon">{% endif %}
@@ -17,49 +18,92 @@
 <body>
 
   <header>
-    <nav><ul>
-      {% for node in site.posts reversed %}
-        {% capture id %}{{ node.id | remove:'/' | downcase }}{% endcapture %}
-        <li class="p-{{id}}"><a href="#{{id}}">{{node.title}}</a></li>
-      {% endfor %}
-    </ul></nav>
+    <div class="container">
+      <nav>
+        <ul class="header-list">
+            <li class="header-list__item header-list__item--icon">
+              <a href="/#"><img src="img/KnightRiderLogo32px.png"></a>
+            </li>
+          {% assign nodes = site.posts | where:'type','content' | reverse %}
+          {% for node in nodes %}
+            {% capture id %}{{ node.id | remove:'/' | downcase }}{% endcapture %}
+            <li class="p-{{id}} header-list__item"><a href="/#{{id}}">{{node.title}}</a></li>
+          {% endfor %}
+            <li class="header-list__item"><a href="/#team">Team</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <div class="container {{ page.style }}">
-      <img src="img/knightrider-logo.png" class="logo">
-      <div class="row">
-        <div class="col1 six columns">
-          {% for page in site.posts reversed %}
-            {% capture thecycle1 %}{% cycle 'col1_even', 'col1_odd' %}{% endcapture %}
-            {% if thecycle1 == 'col1_even' %}
-              {% capture id %}{{ page.id | remove:'/' | downcase }}{% endcapture %}
-              <section id="{{id}}" class="p-{{id}}">
-                {{ page.content }}
-              </section>
-            {% endif %}
-          {% endfor %}
-        </div>
-        <div class="col2 six columns">
-          {% for page in site.posts reversed %}
-            {% capture thecycle2 %}{% cycle 'col2_even', 'col2_odd' %}{% endcapture %}
-            {% if thecycle2 == 'col2_odd' %}
-              {% capture id %}{{ page.id | remove:'/' | downcase }}{% endcapture %}
-              <section id="{{id}}" class="p-{{id}}">
-                {{ page.content }}
-              </section>
-            {% endif %}
-          {% endfor %}
-        </div>
+    <div class="logo-container">
+      <img src="img/logo.png" class="logo">
+    </div>
+    <div class="main-shadow">
+      <div class="container {{ page.style }}">
+
+
+        {% assign lines = site.posts | where:'type','line' | reverse %}
+        {% assign line_index = 0 %}
+        {% for page in lines %}
+          {% include cols.html %}
+          <div class="row">
+            <hr>
+          </div>
+        {% endfor %}
+        {% include cols.html %}
+
       </div>
+
     </div>
   </main>
 
   <footer>
     <div id="footer" class="text-white">
-      <div class="container">
-        {% capture foottext %} {% include footer.md %} {% endcapture %}
-        {{ foottext | markdownify }}
+      <div class="container contributions">
+        <div class="row">
+          <div class="twelve columns contributions__title">
+            <h4>Team</h4>
+            <a id="team" class="anchor"></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="four columns contributor">
+            <span class="contributor__name">Adam Pielbusch</span>
+            <ul>
+              <li>-</li>
+            </ul>
+          </div>
+          <div class="four columns contributor">
+            <span class="contributor__name">Elias Lousseief</span>
+            <ul>
+              <li>-</li>
+            </ul>
+          </div>
+          <div class="four columns contributor">
+            <span class="contributor__name">Erik Lindbom</span>
+            <ul>
+              <li>-</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="four columns offset-by-two contributor">
+            <span class="contributor__name">Lucas Garnot</span>
+            <ul>
+              <li>-</li>
+            </ul>
+          </div>
+          <div class="four columns contributor">
+            <span class="contributor__name">Tobias Hindersson</span>
+            <ul>
+              <li>Fiducial/marker making</li>
+              <li>Gameplay scripting</li>
+              <li>AR scripting</li>
+              <li>Webmaster</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </footer>
@@ -68,5 +112,5 @@
   <script>plyr.setup();</script>
 </body>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="site.js"></script>
+<!--<script src="site.js"></script>-->
 </html>

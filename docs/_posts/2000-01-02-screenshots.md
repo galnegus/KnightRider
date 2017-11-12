@@ -1,5 +1,6 @@
 ---
 title: "Screenshots"
+type: "content"
 ---
 
 #### Screenshots
