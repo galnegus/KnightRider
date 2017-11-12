@@ -29,7 +29,7 @@
             {% capture id %}{{ node.id | remove:'/' | downcase }}{% endcapture %}
             <li class="p-{{id}} header-list__item"><a href="#{{id}}">{{node.title}}</a></li>
           {% endfor %}
-            <li class="header-list__item"><a href="#team">Team</a></li>
+            <li class="header-list__item header-list__item--right"><a href="#team">Team</a></li>
         </ul>
       </nav>
     </div>
