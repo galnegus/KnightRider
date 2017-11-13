@@ -1,6 +1,6 @@
 ---
 title: "Screenshots"
-type: "content"
+type: "other"
 ---
 
 <div class="gallery">
