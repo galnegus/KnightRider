@@ -24,16 +24,16 @@ body {
 }
 
 a {
-  color: #FF5733;
+  color: #FF8166;
   text-decoration: none;
 }
 
 a:hover {
-  color: #FF6C4D;
+  color: #FFAB99;
 }
 
 a:active {
-  color: #FF8166;
+  color: #FFD5CC;
 }
 
 h4 {
@@ -48,6 +48,11 @@ h4 {
 
 p {
   margin-bottom: 1em;
+}
+
+strong {
+  font-weight: 500;
+  color: #B8B3BC;
 }
 
 header {
@@ -206,6 +211,11 @@ footer {
 
 .contributor {
   margin-bottom: 24px;
+  text-align: left;
+}
+
+.contributor__title {
+  margin-bottom: 12px;
 }
 
 .contributor__name {
@@ -213,9 +223,11 @@ footer {
   text-align: center;
   display: block;
   width: 100%;
-  margin-bottom: 12px;
 }
 
+.contributor__contact {
+  text-align: center;
+}
 
 
 .plyr button {
