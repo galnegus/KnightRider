@@ -169,6 +169,7 @@ background: linear-gradient(to right, #BFBCB2, #F4E2D8, #BFAFAF); /* W3C, IE 10+
 
 main .container {
   padding-top: 38px;
+  padding-bottom: 20px;
 }
 
 section {
